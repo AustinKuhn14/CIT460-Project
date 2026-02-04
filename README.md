@@ -8,6 +8,7 @@ The goal of this project is to create a system that uses a pipe-to-pipe architec
 Project Plan
 ------------
 Project timeline based on sprints instead of dates
+
 Sprint 1:
 - Identify and connect to data sources
 - Validate and clean incoming data
