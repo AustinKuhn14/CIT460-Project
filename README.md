@@ -1,6 +1,11 @@
 # CIT460-Project
 Semester long project for Advanced Topics in Programming 
 
+## How to Run
+1. Install dependencies -> pip install -r requirements.txt
+2. Run main.py
+3. Run App.py in terminal by using: python -m streamlit run App.py
+
 Description
 -----------
 The goal of this project is to create a system that uses a pipe-to-pipe architecture. This architecture focuses on processing raw data through a series of modular stages, including data ingestion, validation, transformation, storage, and visualization. The system will be designed so that each stage operates independently, allowing for improved maintainability, scalability, and reliability. Within this process, the data is stored in a database to persist processed results rather than relying solely on data transferred from an API, which may change or become unavailable over time. The stored data is then retrieved from the database and used for analytics and visualization in a dashboard format. Once completed, the system will be deployed on Microsoft Azure.
