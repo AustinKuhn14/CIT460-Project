@@ -27,7 +27,7 @@ def get_GameLogs(player_id, season):
         return None
     
    
-# This shows how to call the live version of the API, however it may take too long to load which is why I switched
+# This shows how to call the live version of the API, however it may take too long to load which is why I switched over to the static version
 #   def get_GameLogs(player_id, season):
 #     url = "https://stats.nba.com/stats/playergamelog"
 #
@@ -53,4 +53,4 @@ def get_GameLogs(player_id, season):
 #
 #     return df
 
-#Same would be done for 
+#Same format would be done for get_players as well.
