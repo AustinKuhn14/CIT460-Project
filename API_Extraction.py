@@ -1,12 +1,13 @@
 #Purpose:
 #Reads and pulls the API data from an imported NBA API
-#Sprint: 1
+#Sprint: 3
 
 
 #Need to install nba_api
 from nba_api.stats.static import players
 from nba_api.stats.endpoints import playergamelog
 import time
+import pandas as pd
 
 
 def get_players():
@@ -15,11 +16,29 @@ def get_players():
 
 def get_GameLogs(player_id, season):
     try:
-        gamelog = playergamelog.PlayerGameLog(
+        # Regular season
+        regular = playergamelog.PlayerGameLog(
             player_id=player_id,
-            season=season
+            season=season,
+            season_type_all_star="Regular Season"
         )
-        df = gamelog.get_data_frames()[0]
+
+        # Playoffs
+        playoffs = playergamelog.PlayerGameLog(
+            player_id=player_id,
+            season=season,
+            season_type_all_star="Playoffs"
+        )
+
+        regular_df = regular.get_data_frames()[0]
+        playoff_df = playoffs.get_data_frames()[0]
+        dfs = [regular_df, playoff_df]
+
+        # Remove empty DataFrames
+        dfs = [d for d in dfs if not d.empty]
+
+        df = pd.concat(dfs, ignore_index=True)
+
         time.sleep(0.6)
         return df
     except Exception as e:

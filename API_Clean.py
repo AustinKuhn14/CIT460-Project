@@ -1,6 +1,6 @@
 #Purpose:
 # Filters the API to provide desired columns for database upload
-#Sprint: 1
+#Sprint: 3
 
 import pandas as pd
 

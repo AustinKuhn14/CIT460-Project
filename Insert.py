@@ -1,6 +1,6 @@
 # Purpose:
 # This module handles loading cleaned NBA data into SQLite.
-# Sprint: 1
+# Sprint: 3
 
 import sqlite3
 
