@@ -64,9 +64,9 @@ else:
             best_reb = summary["reb"].idxmax()
             best_ast = summary["ast"].idxmax()
 
-            st.write(f"🏆 Best Scorer: {best_pts}")
-            st.write(f"🏆 Best Rebounder: {best_reb}")
-            st.write(f"🏆 Best Playmaker: {best_ast}")
+            st.write(f"Best Scorer: {best_pts}")
+            st.write(f"Best Rebounder: {best_reb}")
+            st.write(f"Best Playmaker: {best_ast}")
 
             cols = st.columns(len(st.session_state.selected_players))
 
