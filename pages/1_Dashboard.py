@@ -64,6 +64,22 @@ else:
             col2.metric("Avg Rebounds", round(df["reb"].mean(), 1))
             col3.metric("Avg Assists", round(df["ast"].mean(), 1))
 
+            st.divider()
+
+            st.subheader("Game Log")
+
+            # Show table of games
+            st.dataframe(
+                df[["game_date", "pts", "reb", "ast", "matchup", "wl"]]
+                .rename(columns={
+                    "game_date": "Date",
+                    "pts": "Points",
+                    "reb": "Rebounds",
+                    "ast": "Assists"
+                }),
+                use_container_width=True
+            )
+
             # Pts Graph 
             st.subheader("Points Over Time")
             fig_pts, ax_pts = plt.subplots()

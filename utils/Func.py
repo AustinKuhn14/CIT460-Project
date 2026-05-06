@@ -13,7 +13,6 @@ def get_players():
 
 
 @st.cache_data
-
 def load_data(players, start_date, end_date):
     try:
         conn = sqlite3.connect("nba.db")
@@ -21,7 +20,7 @@ def load_data(players, start_date, end_date):
         placeholders = ",".join("?" for _ in players)
 
         query = f"""
-            SELECT player_name, game_date, pts, reb, ast, min
+            SELECT player_name, game_date, pts, reb, ast, min, matchup, wl
             FROM GameLogs
             WHERE player_name IN ({placeholders})
         """
